@@ -4,7 +4,6 @@ const genera = document.getElementById("Genera");
 let controllo = false;
 botton.addEventListener('click', function () {
     const email = document.getElementById('userEmail').value;
-
     for (let i = 0; i < emailsarray.length && controllo == false; i++) {
         if (email == emailsarray[i]) {
             console.log("Verificato");
@@ -15,8 +14,8 @@ botton.addEventListener('click', function () {
         console.log("Non Verificato");
     }
 })
-if (controllo == true) {
-    genera.addEventListener('click', function () {
+genera.addEventListener('click', function () {
+    if (controllo == true) {
         const randomPlayer = (Math.random() * 6).toFixed(1);
         const randomComputer = (Math.random() * 6).toFixed(1);
         console.log(randomPlayer + ' ' + randomComputer);
@@ -25,7 +24,8 @@ if (controllo == true) {
         } else {
             console.log("hai perso");
         }
-    })
-}
+    }
+})
+
 
 //lprimogeri@gmail.com
