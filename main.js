@@ -1,31 +1,28 @@
-const emailsarray = ["lprimogeri@gmail.com", "l2primogeri@gmail.com", "l3primogeri@gmail.com"];
+const emailsarray = ["ciao", "ciao2", "ciao4", "ciao3", "ciao5", "l2primogeri@gmail.com", "l3primogeri@gmail.com"];
 const botton = document.getElementById("Btn");
-const email = document.getElementById('userEmail').value;
-let controllo = false;
+const genera = document.getElementById("Genera");
 botton.addEventListener('click', function () {
-    for (let i = 0; i < emailsarray.length; i++) {
-        //break viene usato per 
-        if (controllo == false) {
-            console.log("entrato")
-            for (let j = 0; j < emailsarray.length; j++) {
-                if (email === emailsarray[j]) {
-                    controllo = true;
-                    break;
-                } else {
-                    controllo = false;
-                    break;
-                }
-            }
-        } else {
-            break;
+    const email = document.getElementById('userEmail').value;
+    let controllo = false;
+    for (let i = 0; i < emailsarray.length && controllo == false; i++) {
+        if (email == emailsarray[i]) {
+            console.log("Verificato");
+            controllo = true;
         }
     }
-    console.log(controllo);
-    if (controllo == true) {
-        console.log("puoi accedere");
-    } else {
-        console.log("email non presente");
+    if (controllo == false) {
+        console.log("Non Verificato");
     }
-});
+})
+genera.addEventListener('click', function () {
+        const randomPlayer = (Math.random() * 6).toFixed(1);
+        const randomComputer = (Math.random() * 6).toFixed(1);
+        console.log(randomPlayer + ' ' + randomComputer);
+        if (randomPlayer > randomComputer) {
+            console.log("hai vinto");
+        } else {
+            console.log("hai perso");
+        }
+})
 
 //lprimogeri@gmail.com
