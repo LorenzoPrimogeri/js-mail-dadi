@@ -10,8 +10,14 @@ body{
     width: 1200px;
     height: 400px;
 }
-.color-acqua{
+.c-acqua{
     color: aqua;    
+}
+.c-green{
+    color: lightgreen;    
+}
+.c-red{
+    color: red;    
 }
 a{
     cursor: pointer;
