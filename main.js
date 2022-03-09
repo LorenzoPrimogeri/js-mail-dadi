@@ -5,11 +5,18 @@ let controllo = false;
 botton.addEventListener('click', function () {
     for (let i = 0; i < emailsarray.length; i++) {
         //break viene usato per 
-        if (email === emailsarray[i]) {
-            controllo = true;
-            break;
+        if (controllo == false) {
+            console.log("entrato")
+            for (let j = 0; j < emailsarray.length; j++) {
+                if (email === emailsarray[j]) {
+                    controllo = true;
+                    break;
+                } else {
+                    controllo = false;
+                    break;
+                }
+            }
         } else {
-            controllo = false;
             break;
         }
     }
